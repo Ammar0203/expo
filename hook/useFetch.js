@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import jobs_data from '../data'
 // import { RAPID_API_KEY } from '@env';
 
 // const rapidApiKey = RAPID_API_KEY;
@@ -23,12 +24,14 @@ const useFetch = (endpoint, query) => {
   
 
   const fetchData = async () => {
+  // const fetchData = () => {
     setIsLoading(true);
 
     try{
-      const response = await axios.request(options);
+      // const response = await axios.request(options);
 
-      setData(response.data.data)
+      // setData(response.data.data)
+      setData(jobs_data)
     } catch(error) {
       setError(error)
       alert('There is an error:\n'+ JSON.stringify(error))
